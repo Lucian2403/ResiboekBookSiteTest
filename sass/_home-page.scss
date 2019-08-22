@@ -1,0 +1,482 @@
+.site-content {
+
+  .hero-image {
+    width: 100%;
+    height: 40rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: 27%;
+    position: relative;
+
+    @include respond(phone) {
+      height: 50rem;
+    }
+
+    &:before{
+      content: '';
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $color-dark-grey;
+      opacity: .75;
+    }
+
+    .home_info_book {
+      position: relative;
+      z-index: 99;
+      top: 5.5rem;
+      display: flex;
+
+      @include respond(tab-port-small) {
+        top: 1.5rem;
+        padding: 0 1.5rem;
+      }
+
+      @include respond(phone) {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+      }
+
+      a,
+      a:visited {
+        text-decoration: none;
+        width: 27rem;
+        margin-right: 14rem;
+
+        transition: .4s;
+
+        @include respond(tab-port-small) {
+          margin-right: 3rem;
+        }
+
+        @include respond(phone) {
+          width: auto;
+          margin: 0;
+        }
+
+        &:hover {
+          transform: scale(1.03);
+        }
+
+
+        img {
+          width: 27rem;
+          height: 40rem;
+          border-radius: .6rem;
+          -webkit-box-shadow: .3rem .4rem 1rem rgba($color-dark-grey, .5);
+          -moz-box-shadow: .3rem .4rem 1rem rgba($color-dark-grey, .5);
+          box-shadow: .3rem .4rem 1rem rgba($color-dark-grey, .5);
+
+          @include respond(tab-port-small) {
+            height: 37rem;
+            width: 24rem;
+          }
+
+          @include respond(phone) {
+            width: auto;
+            height: 49rem;
+          }
+        }
+      }
+
+      .text_info_book {
+        position: relative;
+        top: 6rem;
+        width: 50%;
+        padding-bottom: 1.5rem;
+
+        @include respond(tab-port-small) {
+          width: 70%;
+        }
+
+        @include respond(phone) {
+          width: 100%;
+          text-align: center;
+          margin-bottom: 6rem;
+        }
+
+        h2 {
+          color: $color-lighter-grey;
+          transition: .4s;
+
+          @include respond(phone) {
+            margin-bottom: 2rem;
+            font-size: 4.5rem;
+          }
+          &:hover {
+            cursor: pointer;
+            color: $color-blue;
+            transform: translateX(.5rem);
+          }
+        }
+
+        p.book_author {
+          color: $color-lighter-grey;
+          margin-bottom: 3rem;
+          margin-top: -1rem;
+        }
+
+        p.synopsis_book {
+          color: $color-lighter-grey;
+          font-size: 1.4rem;
+
+          @include respond(phone) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  .main_info {
+    display: flex;
+    align-items: start;
+
+    padding-top: 13rem;
+
+    @include respond(tab-port-small) {
+      padding-top: 4rem;
+    }
+
+    @include respond(phone) {
+      padding-top: 25rem;
+    }
+
+    .main_text {
+      width: 60%;
+      text-align: justify;
+      flex: 1;
+      padding-right: 15%;
+
+      @include respond(tab-land) {
+        padding: 0 2rem;
+      }
+
+      h1 {
+        text-align: left;
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    img {
+      width: 36rem;
+      height: 46.5rem;
+      object-fit: cover;
+      object-position: 80% 0;
+      border-radius: 1rem;
+      -webkit-box-shadow: .3rem .4rem 1rem rgba($color-dark-grey, .5);
+      -moz-box-shadow: .3rem .4rem 1rem rgba($color-dark-grey, .5);
+      box-shadow: .3rem .4rem 1rem rgba($color-dark-grey, .5);
+
+      @include respond(tab-port-small) {
+        display: none;
+      }
+    }
+  }
+
+  .line-separator {
+    border: 1px solid $color-light-grey;
+    margin: 7rem 0 6rem 0;
+
+    @include respond(tab-port-small) {
+      margin: 7rem 0 3rem 0;
+    }
+  }
+
+  //////////////////
+  //LANDEN SECTION//
+  //////////////////
+  .landen {
+    @include respond(tab-port-small) {
+      max-width: 86rem;
+      height: 40rem;
+    }
+
+    &__info {
+      h2 {
+        font-weight: 600;
+      }
+
+      @include respond(tab-port-small) {
+        display: none;
+      }
+    }
+
+    &__selector {
+      display: flex;
+      justify-content: space-between;
+      align-content: center;
+      margin-top: 3rem;
+
+      @include respond(tab-port-small) {
+        display: block;
+    }
+
+      &__continent {
+        display: flex;
+        flex-direction: column;
+        width: 20%;
+
+        @include respond(tab-land) {
+          width: 25%;
+        };
+
+        @include respond(tab-port-small) {
+          width: 100%;
+        }
+
+        #continent {
+          @include respond(tab-port-small) {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            overflow: scroll;
+
+            li {
+              margin-right: 3rem;
+            }
+          }
+        }
+        ul {
+
+          li {
+            list-style: none;
+            text-transform: uppercase;
+            font-size: 1.6rem;
+            color: $color-grey;
+            border-bottom: 1px solid $color-light-grey;
+            padding: 1.3rem;
+            letter-spacing: .15rem;
+
+            transition: .2s;
+
+            @include respond(tab-port-small) {
+              border: none;
+              white-space: nowrap;
+            }
+
+            &:first-child {
+              border-top: 1px solid $color-light-grey;
+
+              @include respond(tab-port-small) {
+                border: none;
+              }
+            }
+
+            &:hover {
+              cursor: pointer;
+              font-weight: 800;
+              color: $color-dark-grey;
+              background: $color-grey-2;
+
+              @include respond(tab-port-small) {
+                background: transparent;
+              }
+            }
+          }
+
+          .active {
+            cursor: pointer;
+            color: $color-dark-grey;
+            background: $color-grey-2;
+            font-weight: 800;
+
+            position: relative;
+
+            @include respond(tab-port-small) {
+              background: transparent;
+            }
+
+            &:after {
+              content: '\f054';
+              font-family: "Font Awesome 5 Free";
+              font-weight: 900;
+              position: absolute;
+              right: 2rem;
+
+              @include respond(tab-port-small) {
+                content: '';
+              }
+            }
+          }
+        }
+      }
+
+      &__country {
+        width: 70%;
+        overflow: hidden;
+        position: relative;
+
+        @include respond(tab-port-small) {
+          overflow: initial;
+          width: 50%;
+          top: 3rem;
+        }
+        ul {
+          height: 35rem;
+          display: flex;
+          flex-direction: column;
+          flex-wrap: wrap;
+
+          transition: .5s ease-in-out;
+          transition-delay: .1s;
+          position: absolute;
+          width: 100%;
+          transform-origin: top;
+          top: 0;
+
+          @include respond(tab-port-small) {
+            top: 50%;
+            left: 0;
+            transform: translate(-50%, -50%);
+
+            align-items: center;
+            width: 100vw;
+          }
+
+          li {
+            list-style: none;
+
+            a,
+            a:visited {
+              text-decoration: none;
+              font-size: 1.5rem;
+              list-style: none;
+              color: $color-grey;
+              line-height: 3rem;
+
+              @include respond(tab-port-small) {
+                color: $color-dark-grey;
+              }
+
+              &:hover {
+                color: $color-blue;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.last_add {
+
+  @include respond(tab-port-small) {
+    max-width: 86rem;
+  }
+  h2{
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 6rem;
+  }
+
+  li {
+    width: 27rem;
+    list-style: none;
+    margin-bottom: 5rem;
+
+    .cover_image_book {
+      position: relative;
+      width: 27rem;
+      height: 40rem;
+      border-radius: .6rem;
+      overflow: hidden;
+
+      -webkit-box-shadow: .3rem .4rem 1rem rgba($color-dark-grey, .5);
+      -moz-box-shadow: .3rem .4rem 1rem rgba($color-dark-grey, .5);
+      box-shadow: .3rem .4rem 1rem rgba($color-dark-grey, .3);
+
+      transition: .3s ease-in-out;
+
+      &:hover {
+        .gradient-hover {
+          bottom: 0;
+        }
+      }
+
+      .gradient-hover {
+        bottom: -40rem;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(to top, rgba($color-blue, .7) 0%, transparent 80%);
+        transition: .3s ease-out;
+
+        &:before {
+          content: '\f0c1  Meer Informatie';
+          font-family: "Font Awesome 5 Free";
+          font-weight: 600;
+          font-size: 1.5rem;
+          color: $color-lighter-grey;
+          position: absolute;
+          bottom: 10%;
+          left: 50%;
+
+          transform: translate(-50%, -50%);
+        }
+
+      }
+
+      img {
+        //position: relative;
+        //z-index: 1;
+        width: 100%;
+        height: 100%;
+        border-radius: .6rem;
+      }
+    }
+
+    .text_info_book {
+      position: relative;
+      margin-top: 2.5rem;
+
+      h3 {
+        a,
+        a:visited {
+          text-decoration: none;
+          color: $color-dark-grey;
+          transition: .2s;
+          &:hover {
+            color: $color-blue;
+          }
+        }
+      }
+
+      p.book_author {
+        color: $color-grey;
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .owl-carousel {
+    .owl-stage-outer {
+      .owl-stage {
+        div {
+          margin-right: 5rem;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

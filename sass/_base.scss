@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Overpass:100,100i,200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&display=swap');
+
+//COLORS
+
+$color-yellow: #ffd43b;
+$color-yellow-hover: #e7c634;
+$color-blue: #329af0;
+$color-light-grey: #e9ecef;
+$color-lighter-grey: #f8f9fa;
+$color-grey: #868e96;
+$color-medium-grey: #495057;
+$color-dark-grey: #343a40;
+$color-grey-2: #f1f3f5;
+
+$height-header-menu: 10rem;
+
+
+
+
+//Mixin of Book List
+@mixin book_list() {
+
+  li.book_item {
+    width: 27rem;
+    list-style: none;
+    margin-bottom: 5rem;
+
+    .cover_image_book {
+      position: relative;
+      width: 27rem;
+      height: 40rem;
+      border-radius: .6rem;
+      overflow: hidden;
+
+      -webkit-box-shadow: .3rem .4rem 1rem rgba($color-dark-grey, .5);
+      -moz-box-shadow: .3rem .4rem 1rem rgba($color-dark-grey, .5);
+      box-shadow: .3rem .4rem 1rem rgba($color-dark-grey, .3);
+
+      transition: .3s ease-in-out;
+
+      &:hover {
+        .gradient-hover {
+          bottom: 0;
+        }
+      }
+
+      .gradient-hover {
+        bottom: -40rem;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(to top, rgba($color-blue, .7) 0%, transparent 80%);
+        transition: .3s ease-out;
+
+        &:before {
+          content: '\f0c1  Meer Informatie';
+          font-family: "Font Awesome 5 Free";
+          font-weight: 600;
+          font-size: 1.5rem;
+          color: $color-lighter-grey;
+          position: absolute;
+          bottom: 10%;
+          left: 50%;
+
+          transform: translate(-50%, -50%);
+        }
+
+      }
+
+      img {
+        //position: relative;
+        //z-index: 1;
+        width: 100%;
+        height: 100%;
+        border-radius: .6rem;
+      }
+    }
+
+    .text_info_book {
+      position: relative;
+      margin-top: 2.5rem;
+
+      h3 {
+        a,
+        a:visited {
+          text-decoration: none;
+          color: $color-dark-grey;
+          transition: .2s;
+          &:hover {
+            color: $color-blue;
+          }
+        }
+      }
+
+      p.book_author {
+        color: $color-grey;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+
+
+//RESPONSIVE DESIGN MIXIN
+// MEDIA QUERY MANAGER
+
+/*
+0 - 600px:      Phone
+600 - 782px:    Tablet portrait small
+782 - 900px:    Tablet portrait
+900 - 1200px    Tablet landscape
+[1200 - 1800] is where our normal styles apply
+2100px +        Big desktop
+
+$breakpoint argument choices:
+- phone
+- tab-port
+- tab-port-small
+- tab-land
+- big-desktop
+
+
+1em = 16px;
+em for 600px is (600/16) = 37.5em
+*/
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 37.5em) { @content };    //600px;
+  }
+
+  @if $breakpoint == tab-port-small  {
+    @media only screen and (max-width: 48.875em) { @content };     //782px;
+  }
+
+  @if $breakpoint == tab-port  {
+    @media only screen and (max-width: 56.25em) { @content };     //900px;
+  }
+
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: 75em) { @content };    //1200px;
+  }
+
+  @if $breakpoint == small-desktop {
+    @media only screen and (max-width: 110em) { @content };    //1200px;
+  }
+
+  @if $breakpoint == big-desktop {
+    @media only screen and (min-width: 131.25em) { @content };    //2100px;
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+//TYPOGRAPHY
+html {
+  //This define what 1rem is
+  font-size: 62.5%;   //1rem = 10px; 10px/16px = 62.5%
+  font-family: 'Overpass', 'Roboto';
+  scroll-behavior: smooth;
+
+  // RESPONSIVE MEDIA
+  @include respond(tab-port) {
+    font-size: 56.25%;   //1rem = 9px, 9/16 = 56.25%;
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%;     //1rem = 12, 12/16 = 75%
+  }
+}
+
+h1,h2,h3,h4,h5,h6 {
+  margin: 0;
+}
+
+h1 {
+  font-size: 5.4rem;
+  font-weight: 900;
+  line-height: 6rem;
+}
+h2 {
+  font-size: 3.7rem;
+  font-weight: 300;
+  color: $color-dark-grey;
+}
+h3 {
+  font-size: 2rem;
+}
+p {
+  line-height: 2.7rem;
+  font-size: 1.7rem;
+  color: $color-grey;
+
+  strong {
+    display: block;
+    color: $color-dark-grey;
+  }
+
+  @include respond(tab-land) {
+    font-size: 1.8rem;
+  }
+}
+
+//GLOBAL
+//.site-content {
+//  margin-top: 20rem;
+//}
+
+.container{
+  max-width: 120rem;
+  width: 100%;
+  margin: 0 auto;
+
+  @include respond(big-desktop) {
+    max-width: 115rem;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  @include respond(tab-land) {
+    max-width: 90rem;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  @include  respond(tab-port) {
+    max-width: 85rem;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  @include respond(tab-port-small) {
+    max-width: 80rem;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  @include respond(phone) {
+    max-width: 50rem;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+.logged-in {
+  .site-header {
+    top: calc(3.2rem - 9.5rem);
+
+    @include respond(big-desktop) {
+      top: calc(2.6rem - 9.5rem);
+    }
+
+    @include respond(tab-land) {
+      top: calc(3.2rem - 7rem);
+    }
+
+    @include respond(tab-port-small) {
+      top: calc(5rem - 7rem);
+    }
+  }
+}
+
+#wpadminbar {
+  @include respond(phone) {
+    position: fixed;
+  }
+}
+
+.button {
+  text-decoration: none;
+  font-size: 1.8rem !important;
+  padding: 1.5rem 4rem;
+
+  transition: .3s;
+}
+
+.button_primary,
+.button_primary:visited {
+  background-color: $color-yellow;
+  color: $color-dark-grey;
+  border-radius: .5rem;
+
+  &:hover {
+    background-color: $color-yellow-hover;
+  }
+}
+
+.button_secondary,
+.button_secondary:visited {
+  background-color: $color-light-grey;
+  color: $color-grey;
+  border-radius: .5rem;
+
+  &:hover {
+    background-color: darken($color-light-grey, 10%);
+  }
+}

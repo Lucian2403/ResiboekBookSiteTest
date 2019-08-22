@@ -1,0 +1,291 @@
+.site-header {
+  padding: 0 1.5rem;
+
+  .site-branding {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 9rem;
+
+    @include respond(phone) {
+      height: 0;
+    }
+
+    .logo_text {
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 9rem;
+        height: 6.5rem;
+
+        @include respond(phone) {
+          display: none;
+        }
+      }
+
+      .site-title {
+        margin-left: 2rem;
+        a,
+        a:visited {
+          text-decoration: none;
+          color: $color-medium-grey;
+          font-size: 3.2rem;
+          font-weight: 300;
+        }
+
+        @include respond(phone) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .border-grey {
+    border-bottom: 1px solid $color-light-grey;
+  }
+
+  #site-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 6.7rem;
+
+    @include respond(phone) {
+      .mega-menu-wrap {
+        display: none;
+      }
+
+      height: 10rem;
+    }
+
+
+    .menu-main-menu-container {
+      ul {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        .current-menu-item {
+          a,
+          a:visited{
+            color: $color-blue;
+          }
+        }
+
+        li {
+          list-style: none;
+          font-size: 1.6rem;
+          font-family: "Overpass";
+          font-weight: 300;
+
+          &:not(:last-child) {
+            margin-right: 3.5rem;
+          }
+
+          a,
+          a:visited {
+            text-decoration: none;
+            color: $color-medium-grey;
+
+            &:hover {
+              color: $color-blue;
+            }
+          }
+        }
+      }
+    }
+
+    .social_item {
+      i {
+        font-size: 3.5rem;
+        transition: .3s;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
+
+///////////////////////
+//////BREADCRUMBS//////
+///////////////////////
+.title_page_breadcrumb {
+  padding: 2rem 0;
+
+  @include respond(tab-port-small) {
+    padding: 2rem 1.5rem;
+  }
+
+  span {
+    font-weight: 300;
+    font-size: 1.5rem;
+    color: $color-grey;
+
+    &:hover {
+      color: $color-blue;
+    }
+    a,
+    a:visited {
+      font-weight: 300;
+      text-decoration: none;
+      font-size: 1.5rem;
+      color: $color-grey;
+
+      &:hover {
+        color: $color-blue;
+      }
+    }
+  }
+  .separator {
+    margin: 0 1rem;
+  }
+
+  .current-item {
+    font-weight: 300;
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: $color-blue;
+  }
+}
+
+///////////////
+//SEARCH FORM//
+///////////////
+#searchform {
+  display: flex;
+  align-items: center;
+
+  @include respond(phone) {
+    display: none;
+  }
+
+  .search_placeholder {
+    width: 36rem;
+    height: 4rem;
+    background-color: $color-grey-2;
+    border: none;
+    -webkit-border-radius: .6rem;
+    -moz-border-radius: .6rem;
+    border-radius: .6rem;
+    outline: none;
+    font-family: Overpass;
+    font-style: italic;
+    font-weight: 200;
+    font-size: 1.6rem;
+    padding: 1.5rem;
+    margin-right: 1rem;
+
+    transition: .3s;
+
+    @include respond(tab-port-small) {
+      width: 20rem;
+    }
+
+    &:hover {
+      -webkit-box-shadow: .4rem .1rem .4rem rgba($color-dark-grey, .4);
+      -moz-box-shadow: .4rem .1rem .4rem rgba($color-dark-grey, .4);
+      box-shadow: .4rem .1rem .4rem rgba($color-dark-grey, .4);
+    }
+
+    &::placeholder{
+      font-family: Overpass;
+      font-style: italic;
+      font-weight: 200;
+      font-size: 1.3rem;
+    }
+  }
+  .search_submit {
+    border: none;
+    -webkit-border-radius: .6rem;
+    -moz-border-radius: .6rem;
+    border-radius: .6rem;
+    height: 3.7rem;
+    width: 3.7rem;
+    background-color: $color-yellow;
+
+    transition: .3s;
+
+    &:hover {
+      cursor: pointer;
+      -webkit-box-shadow: .3rem .1rem .4rem rgba($color-dark-grey, .4);
+      -moz-box-shadow: .3rem .1rem .4rem rgba($color-dark-grey, .4);
+      box-shadow: .3rem .1rem .4rem rgba($color-dark-grey, .4);
+    }
+
+    i {
+      color: $color-lighter-grey;
+      font-size: 1.6rem;
+    }
+  }
+}
+
+//HAMBURGER BUTTON and MOBILE LOGO
+
+.main-navigation {
+  .menu-mmenu-container {
+    display: none;
+  }
+
+  .logo_text_mobile {
+    display: none;
+
+    @include respond(phone) {
+      display: inline-block;
+
+      img {
+        width: 9rem;
+        height: 6rem;
+      }
+    }
+  }
+
+  .menu_link {
+    display: none;
+  }
+
+  @include respond(phone) {
+    display: flex;
+    .menu_link {
+      display: inline-block;
+    }
+  }
+}
+
+
+///////////////////////////////////////////////
+////////MOBILE RESPONSIVE MENU (slicknav)//////
+///////////////////////////////////////////////
+.slicknav_menu {
+  box-shadow: 0 0 1rem rgba(black, .5);
+
+  .slicknav_icon {
+    display: none;
+  }
+
+  .slicknav-flex {
+    height: 6rem;
+  }
+
+  .slicknav_menutxt {
+    border: 1px solid $color-dark-grey;
+    padding: .5rem;
+    border-radius: .4rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+

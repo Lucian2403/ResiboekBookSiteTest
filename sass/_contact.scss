@@ -1,0 +1,328 @@
+.contact_image {
+  width: 100%;
+  height: 35rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: 60%;
+}
+
+.contact_top {
+  max-width: 130rem;
+  width: 100%;
+  margin: 8rem auto 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+
+  @include respond(tab-land) {
+    padding: 0 4rem;
+  }
+
+  @include respond(tab-port-small) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @include respond(phone) {
+    padding: 0 1rem;
+    margin-top: 4rem;
+  }
+
+  .contact_form {
+    width: 70%;
+
+    @include respond(phone) {
+      width: 100%;
+    }
+  }
+
+  .gform_wrapper {
+    width: 90%;
+
+    @include respond(phone) {
+      width: 100%;
+    }
+
+    h3.gform_title {
+      font-size: 4.5rem;
+      font-weight: 300;
+      color: $color-blue;
+      margin-top: 0;
+      margin-bottom: 2.5rem;
+
+      @include respond(phone) {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    .gform_description {
+      text-align: justify;
+      font-size: 1.6rem;
+      line-height: 3rem;
+      font-weight: 300;
+    }
+  }
+
+  .gform_body {
+
+    .gform_fields {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+
+      @include respond(tab-port-small) {
+        display: inline-block;
+      }
+
+      .gfield {
+        width: 50%;
+
+        @include respond(tab-port-small) {
+          display: inline-block;
+          width: 100%;
+        }
+
+        .gfield_label {
+          font-size: 1.7rem;
+          color: $color-blue;
+          font-weight: 300;
+          margin-top: 3rem;
+        }
+
+        .ginput_container {
+          width: 100%;
+
+          .medium {
+            width: 90%;
+            display: inline-block;
+            font-size: 1.6rem !important;
+            font-weight: 300;
+            line-height: 3rem;
+            padding: 1rem .5rem;
+            border: 1px solid rgba(0, 0, 0, 0.13);
+
+            @include respond(phone) {
+              width: 100%;
+            }
+          }
+        }
+      }
+
+      #field_1_5 {
+        width: 100%;
+
+        #input_1_5 {
+          width: 95%;
+        }
+
+        @include respond(tab-port-small) {
+          width: 90%;
+          #input_1_5 {
+            width: 100%;
+          }
+        }
+
+        @include respond(phone) {
+          width: 100%;
+          #input_1_5 {
+            width: 100% !important;
+          }
+        }
+      }
+
+      #field_1_6 {
+        width: 100%;
+
+        #input_1_6 {
+          width: 95%;
+        }
+
+        @include respond(tab-port-small) {
+          width: 90%;
+          #input_1_6 {
+            width: 100%;
+          }
+        }
+
+        @include respond(phone) {
+          width: 100%;
+          #input_1_6 {
+            width: 100% !important;
+          }
+        }
+      }
+    }
+  }
+
+  .gform_footer {
+
+    .button {
+
+      @include respond(tab-port-small) {
+        width: 90%;
+      }
+
+      @include respond(phone) {
+        width: 100%;
+      }
+    }
+
+    .gform_button {
+      background-color: $color-blue;
+      color: $color-light-grey;
+      border: none;
+      border-radius: .4rem;
+
+      &:hover {
+        background-color: darken($color-blue, 15%);
+        cursor: pointer;
+      }
+    }
+  }
+
+  .gform_wrapper div.validation_error {
+    font-size: 1.6rem;
+    font-family: Roboto;
+    font-weight: 100;
+    border-bottom: none;
+  }
+  .gform_wrapper li.gfield.gfield_error {
+    border: none;
+    background-color: transparent;
+
+    .validation_message {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+
+//SIDE INFO FROM CONTACT PAGE
+.side_info {
+
+  @include respond(tab-port-small) {
+    margin-top: 10rem;
+  }
+
+  @include respond(phone) {
+    margin-top: -2rem;
+    text-align: center;
+  }
+
+  .information_content {
+
+    h1 {
+      font-weight: 300;
+      font-size: 3.5rem;
+      color: $color-blue;
+    }
+
+    p {
+      margin: 2rem 0;
+
+      a,
+      a:visited {
+        text-decoration: none;
+        color: $color-grey;
+
+        &:hover {
+          color: $color-blue;
+        }
+      }
+    }
+  }
+
+  iframe {
+    margin: 6rem 0;
+  }
+
+  .social_media {
+    width: 85%;
+
+    @include respond(tab-port-small) {
+      margin-top: 6rem;
+    }
+
+    @include respond(phone) {
+      margin-top: 0;
+      margin-bottom: 3rem;
+      width: 100%;
+    }
+
+    h1 {
+      font-weight: 300;
+      font-size: 3.5rem;
+      color: $color-blue;
+    }
+    .social_media_icon {
+      display: flex;
+      align-items: center;
+
+      font-size: 1.6rem;
+
+      @include respond(phone) {
+        margin: 0 2rem;
+        justify-content: center;
+      }
+
+      a,
+      a:visited{
+        color: $color-dark-grey;
+        font-size: 1.6rem;
+        text-decoration: none;
+
+        border: 1px solid $color-dark-grey;
+        border-radius: 50%;
+        width: 4.5rem;
+        height: 4.5rem;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:not(:last-child) {
+          margin-right: 2rem;
+        }
+
+        transition: .3s;
+
+        &:hover {
+          background-color: $color-blue;
+          color: $color-light-grey;
+        }
+      }
+    }
+  }
+}
+
+
+//////////////////
+///BEDANKT PAGE///
+//////////////////
+.bedankt_image {
+  height: 30rem;
+  background-position-y: 50%;
+  background-size: cover;
+
+  @include respond(phone) {
+    height: 25rem;
+  }
+}
+
+.bedankt_info {
+  margin: 8rem auto 15rem auto;
+
+  @include respond(tab-port) {
+    padding: 0 3rem;
+  }
+
+  h1 {
+    font-weight: 400;
+    font-size: 5rem;
+    color: $color-blue;
+    margin-bottom: 3rem;
+  }
+}

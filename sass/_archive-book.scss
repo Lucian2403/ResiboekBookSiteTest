@@ -1,0 +1,204 @@
+.boeken-site {
+
+  .hero-image-page {
+    width: 100%;
+    height: 26rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: 48%;
+  }
+
+  .boeken_main_info {
+    padding-top: 1.5rem;
+    padding-bottom: 3.5rem;
+    border-bottom: 1px solid $color-light-grey;
+
+    @include respond(tab-port-small) {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
+    .main_text {
+      text-align: justify;
+
+      h1 {
+        text-align: left;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .boeken-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 5rem;
+
+    @include respond(tab-port-small) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .filter {
+      width: 25%;
+
+      @include respond(tab-land) {
+        width: 35%;
+      }
+
+      @include respond(tab-port-small) {
+        width: 100%;
+      }
+
+      h3 {
+        font-size: 2.4rem;
+        @include respond(tab-port-small) {
+          text-align: center;
+        }
+      }
+      h4 {
+        font-size: 1.6rem;
+        margin-top: 2rem;
+        margin-bottom: -.5rem;
+      }
+
+      li {
+        font-size: 1.5rem;
+        color: $color-dark-grey;
+      }
+
+      ul:first-child {
+        @include respond(tab-port-small) {
+          display: flex;
+          justify-content: space-evenly;
+          margin-bottom: 8rem;
+
+          li {
+
+            @include respond(tab-port-small) {
+            //  &:first-child {
+            //    width: 50%;
+            //  }
+            //  &:last-child {
+            //    width: 50%;
+            //  }
+            }
+          }
+        }
+
+      }
+
+
+      .sf-field-taxonomy-categorien,
+      .sf-field-taxonomy-talen {
+        li {
+
+          input {
+            display: none;
+          }
+
+          label {
+            cursor: pointer;
+            padding-left: 0;
+            width: 100%;
+
+            transition: .2s;
+
+            &:hover {
+              color: $color-blue;
+              span.sf-count {
+                opacity: 1;
+              }
+            }
+
+            span.sf-count {
+              opacity: 0;
+            }
+
+          }
+        }
+        .sf-option-active {
+          color: $color-blue;
+        }
+      }
+    }
+    .filter-results {
+      width: 75%;
+
+      @include respond(tab-port-small) {
+        width: 90%;
+      }
+    }
+  }
+
+
+  .book_list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    @include respond(phone) {
+      flex-direction: column;
+    }
+
+    /////////MIXIN OF BOOK LIST CSS/////
+      @include book_list();
+    ////////////////////////////////////
+
+        .text_info_book {
+          position: relative;
+          margin-top: 2.5rem;
+
+          h3 {
+            a,
+            a:visited {
+              text-decoration: none;
+              color: $color-dark-grey;
+              transition: .2s;
+              &:hover {
+                color: $color-blue;
+              }
+            }
+          }
+
+          p.book_author {
+            color: $color-grey;
+            font-size: 1.5rem;
+          }
+        }
+      }
+  }
+
+  ////////PAGINATION///////
+  .page_navigation {
+    text-align: right;
+    border-top: 1px solid $color-light-grey;
+    padding: 2.5rem 0;
+    h2 {
+      display: none;
+    }
+    .nav-links {
+      a,
+      a:visited {
+        text-decoration: none;
+
+        &:hover {
+          background-color: $color-blue;
+          color: $color-lighter-grey;
+        }
+      }
+      .page-numbers {
+        color: $color-grey;
+        font-size: 1.6rem;
+        border: 2px solid $color-light-grey;
+        padding: 1rem 1.2rem;
+
+      }
+
+      .current {
+        border: 2px solid $color-blue;
+        color: $color-dark-grey;
+      }
+    }
+  }

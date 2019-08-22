@@ -1,0 +1,35 @@
+@include book_list();
+
+.page-header {
+  h2 {
+    padding: 4rem 0;
+    text-align: center;
+    font-weight: 700;
+  }
+}
+
+.book-landen {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  li {
+    margin-right: 5rem;
+  }
+
+}
+
+.hero-image-no-post {
+  margin: 8rem 0;
+
+  width: 100%;
+  height: 40rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: 57%;
+
+  h2 {
+    text-align: center;
+    font-weight: 700;
+  }
+}

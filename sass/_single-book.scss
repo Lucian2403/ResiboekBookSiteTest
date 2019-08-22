@@ -1,0 +1,111 @@
+.main-book {
+  display: flex;
+  padding-top: 3rem;
+  padding-bottom: 15rem;
+
+  @include respond(tab-port-small) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  @include respond(phone) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cover_image_book {
+    padding-right: 5rem;
+
+    @include respond(phone) {
+      padding: 0;
+    }
+    img {
+      width: 27rem;
+      height: 40rem;
+      border-radius: .6rem;
+      -webkit-box-shadow: .3rem .4rem 1rem rgba($color-dark-grey, .5);
+      -moz-box-shadow: .3rem .4rem 1rem rgba($color-dark-grey, .5);
+      box-shadow: .3rem .4rem 1rem rgba($color-dark-grey, .5);
+    }
+  }
+
+  .info-part {
+
+    h1 {
+      font-weight: 600;
+
+      @include respond(phone) {
+        text-align: center;
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+        font-size: 3.5rem;
+        line-height: 3.5rem;
+      }
+    }
+
+    .book_author {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+
+      @include respond(phone) {
+        text-align: center;
+        margin-bottom: 1.5rem;
+      }
+    }
+
+
+    .synopsis_book {
+      font-size: 1.5rem;
+      color: $color-dark-grey;
+      text-align: justify;
+    }
+    .synopsis_book_blue {
+      font-size: 1.5rem;
+      color: $color-lighter-grey;
+      background-color: $color-blue;
+      text-align: justify;
+      margin-top: 3rem;
+      padding: 1.5rem 1rem;
+      border-radius: .5rem;
+      font-style: italic;
+    }
+
+    .border-separator {
+      border-bottom: 1px solid $color-light-grey;
+      padding-top: 3rem;
+    }
+
+    .secondary-info {
+      padding-top: 3rem;
+      max-width: 40rem;
+
+      h2{
+        padding-bottom: 2rem;
+        font-weight: 600;
+      }
+
+      .info-line {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: .5rem;
+
+        .info-left {
+          font-size: 1.6rem;
+          font-weight: 600;
+          text-transform: capitalize;
+        }
+        .info-right {
+          width: 50%;
+          font-size: 1.6rem;
+          font-weight: 300;
+          text-align: left;
+          color: $color-grey;
+        }
+      }
+      .btn {
+        margin-top: 4rem;
+      }
+    }
+  }
+
+}

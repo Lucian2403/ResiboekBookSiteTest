@@ -1,0 +1,23 @@
+.site-footer {
+  //padding-top: 15rem;
+
+
+  .copyright {
+    display: flex;
+    justify-content: center;
+
+    padding: 2rem;
+    border-top: 1px solid $color-light-grey;
+
+    li {
+      font-family: "Myriad Pro Light";
+      font-size: 1.3rem;
+      color: $color-grey;
+
+      &:not(:last-child) {
+        list-style: none;
+        margin-right: 3rem;
+      }
+    }
+  }
+}
