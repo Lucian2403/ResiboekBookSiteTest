@@ -89,11 +89,3 @@ $(document).ready(function(){
         }
     });
 });
-
-
-//Menu Button Effect on Mobile
-
-
-
-
-

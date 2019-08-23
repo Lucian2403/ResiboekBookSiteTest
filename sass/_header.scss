@@ -276,6 +276,18 @@
     padding: .5rem;
     border-radius: .4rem;
   }
+
+  .slicknav_nav {
+    li {
+      margin-bottom: 1rem;
+    }
+
+    .search {
+      #slicknav-searchform input[type="text"] {
+        font-size: 1.6rem;
+      }
+    }
+  }
 }
 
 
